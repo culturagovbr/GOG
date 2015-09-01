@@ -53,7 +53,7 @@ public class TbComunicacaoExterna implements Serializable {
     @Column(name = "dsComunicacao")
     private String dsComunicacao;
     
-    @OneToMany(mappedBy = "idComunicacaoExterna", cascade=CascadeType.MERGE)
+    @OneToMany(mappedBy = "idComunicacaoExterna", cascade=CascadeType.MERGE, fetch = FetchType.EAGER)
     private Collection<TbComunicacaoExternaxAnexo> tbComunicacaoExternaxAnexoCollection = new ArrayList<>();
    
     @JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario")
