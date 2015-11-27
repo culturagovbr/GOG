@@ -45,8 +45,8 @@ html,body {
 }
 
 .cabecalho {
-	height: 150px;
-	background: url("../resources/img/topoOuvidoriaInterno.png");
+	height: 100px;
+  	background: url("../resources/img/topoOuvidoriaInterno.png");
 	background-repeat: no-repeat;
 	background-position: 190px;
 }
@@ -75,7 +75,9 @@ html,body {
 }
 
 .bgCabecalho {
+/*
 	background: url("../resources/img/blue_pattern.gif");
+	*/
 }
 
 
@@ -96,14 +98,14 @@ html,body {
 }
 
 .logo img {
-	margin-top: 18px;
+	margin-top: 10px;
 }
 
 .logo .usuarioSistema {
     background-color: #FFFFFF;
     float: right;
-    margin-right: 145px;
-    margin-top: 60px;
+/*    margin-right: 145px;*/
+    margin-top: 40px;
     padding: 4px 10px;
 }
 
@@ -950,6 +952,7 @@ ui-corner-all {
   -o-animation:      atrasoEncaminhamento 1s infinite; /* Opera 12+ */
   animation:         atrasoEncaminhamento 1s infinite; /* IE 10+ */
 }
+
 
 @-webkit-keyframes atrasoEncaminhamento {
   from { background-color: red; }

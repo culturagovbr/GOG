@@ -12,7 +12,14 @@ import br.com.xti.ouvidoria.model.enums.AtrasoManifestacaoEnum;
 import br.com.xti.ouvidoria.model.enums.StatusManifestacaoEnum;
 
 
-
+/**
+ * Classe responsável por carregar dados relacionados a uma manifestação.
+ * Classe utilizada para transitar dados entre as diversas camadas da aplicação, provendo atributos
+ * do modelo de dados da manifestação e atributos de controle para consultas e paginação
+ *  
+ * @author clelson
+ *
+ */
 public class DTOManifestacao extends DTOPesquisaPaginacao {
 	private Integer 				numeroManifestacao;
 	private Integer 				idManifestacao;
