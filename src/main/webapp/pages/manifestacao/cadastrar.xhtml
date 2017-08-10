@@ -49,7 +49,7 @@
                 <p:panelGrid style="vertical-align: central">
                     <p:row>
                         <p:column>
-                            <h:outputText value="Prezado(a), sua manifestação foi gravada e enviada com sucesso ao Ministério da Cultura." />
+                            <h:outputText value="Prezado(a), sua manifestação foi gravada e enviada com sucesso a Ouvidoria." />
                             <p:spacer width="100%" height="20px"/>
                             <h:outputText styleClass="bold" value="Número da Manifestação: #{mBManifestacaoCadastrar.manifestacao.nrManifestacao}" />
                             <p:spacer width="100%" height="20px"/>
@@ -308,7 +308,7 @@
                         </p:column>
                     </p:row>
                     
-                    <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
+                    <!--<p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Faixa Etária:</p:column>  
                         <p:column style="font-weight: bold;">
                             <p:selectOneMenu value="#{mBManifestacaoCadastrar.manifestacao.idFaixaEtaria}"
@@ -323,9 +323,9 @@
                                                />
                             </p:selectOneMenu>
                         </p:column>
-                    </p:row>
+                    </p:row>-->
                     
-                    <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
+                    <!--<p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Grau Instrução:</p:column>  
                         <p:column style="font-weight: bold;">
                             <p:selectOneMenu value="#{mBManifestacaoCadastrar.manifestacao.idGrauInstrucao}"
@@ -340,7 +340,7 @@
                                                />
                             </p:selectOneMenu>
                         </p:column>
-                    </p:row>
+                    </p:row>-->
                     
                     <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Meio de resposta: </p:column>  
@@ -359,14 +359,14 @@
                         </p:column>
                     </p:row>
                     
-                    <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
+                    <!--<p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Nº Pronac</p:column>  
                         <p:column style="font-weight: bold;">
                         	<p:inputText id="nrPronac" value="#{mBManifestacaoCadastrar.manifestacao.nrPronac}" maxlength="7" title="Informe o número do Pronac" style="width: 250px;">
                         		<f:validator binding="#{numeroPronacValidator}" />
                         	</p:inputText>
                         </p:column>
-                    </p:row>
+                    </p:row>-->
                     
                     <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Nº Processo</p:column>  
@@ -458,18 +458,30 @@
                         </p:column>
                     </p:row>
                     
-                    <p:row rendered="#{not mBManifestacaoCadastrar.anonimo and mBManifestacaoCadastrar.tipoPessoaFisica}">
+                    <!--<p:row rendered="#{not mBManifestacaoCadastrar.anonimo and mBManifestacaoCadastrar.tipoPessoaFisica}">
                         <p:column style="font-weight: bold;">Raça: </p:column>  
                         <p:column style="font-weight: bold;">
                             <p:selectOneMenu id="slcRaca" 
                             				 style="width: 250px"
                                              value="#{mBManifestacaoCadastrar.manifestacao.tpRaca}">  
                                 <f:selectItem itemLabel="- Selecione -" />
-                                <f:selectItems value="#{mBEnum.racaEnums}" var="raca" itemLabel="#{raca.descricao}" itemValue="#{raca.id}"/>
+                                <f:selectItems value="#{mBUnidade.todos}" var="raca" itemLabel="#{unidade.nmUnidade}" itemValue="#{unidade.idUnidade}"/>
+                            </p:selectOneMenu>
+                        </p:column>
+                    </p:row>-->
+
+                    <p:row>
+                        <p:column style="font-weight: bold;">Unidade destino da manifestação: </p:column>  
+                        <p:column style="font-weight: bold;">
+                            <p:selectOneMenu id="nrPronac" 
+                            				 style="width: 250px"
+                                             value="#{mBManifestacaoCadastrar.manifestacao.nrPronac}">  
+                                <f:selectItem itemLabel="- Selecione -" />
+                                <f:selectItems value="#{mBUnidade.todos}" var="unidade" itemLabel="#{unidade.nmUnidade}" itemValue="#{unidade.nmUnidade}"/>
                             </p:selectOneMenu>
                         </p:column>
                     </p:row>
-                    
+
                     <p:row>
                         <p:column style="font-weight: bold;">Texto da manifestação: *</p:column>  
                         <p:column style="font-weight: bold;">
