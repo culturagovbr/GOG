@@ -960,6 +960,9 @@ public class MBManifestacao extends AbstractManifestationController implements S
 
     public void gravaStatusManifestacao() {
         try {
+
+			this.txtFiltroOrgaoDestino = manifestacao.getNrPronac();
+
             //STATUS EM ANALISE
             if (StatusManifestacaoEnum.EM_ANALISE.getId().equals(manifestacao.getStStatusManifestacao())) {
                 manifestacao.setIdUsuarioAnalisador(securityService.getUser());
