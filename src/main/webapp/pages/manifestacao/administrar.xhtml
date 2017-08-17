@@ -393,6 +393,7 @@
 					
 					<p:column headerText="Orgão de Destino*">
 						<p:inputText id="txtFiltroOrgaoDestino" value="#{mBManifestacao.txtFiltroOrgaoDestino}" style="width: 350px">
+							<p:ajax update="slcUnidadeTramite" event="click" global="false" listener="#{mBManifestacao.filtrarOrgaoDestino}" />
 							<p:ajax update="slcUnidadeTramite" event="keyup" global="false" listener="#{mBManifestacao.filtrarOrgaoDestino}" />
 						</p:inputText>
 						
