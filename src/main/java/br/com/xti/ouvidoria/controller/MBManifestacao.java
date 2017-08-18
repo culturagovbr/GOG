@@ -958,16 +958,16 @@ public class MBManifestacao extends AbstractManifestationController implements S
         }
     }
 
+	public void setaOrgaoDestino(){
+		this.txtFiltroOrgaoDestino = manifestacao.getNrPronac();
+	}
+
     public void gravaStatusManifestacao() {
         try {
-
-			this.txtFiltroOrgaoDestino = manifestacao.getNrPronac();
-
-            //STATUS EM ANALISE
-            if (StatusManifestacaoEnum.EM_ANALISE.getId().equals(manifestacao.getStStatusManifestacao())) {
+			//STATUS EM ANALISE
+			if (StatusManifestacaoEnum.EM_ANALISE.getId().equals(manifestacao.getStStatusManifestacao())) {
                 manifestacao.setIdUsuarioAnalisador(securityService.getUser());
             }
-
             //STATUS SOLUCIONADA
             if (StatusManifestacaoEnum.SOLUCIONADA.getId().equals(manifestacao.getStStatusManifestacao())) {
                 //recupera status anterior da manifestacao
@@ -991,6 +991,8 @@ public class MBManifestacao extends AbstractManifestationController implements S
                 dao.edit(manifestacao);
                 ajustaListaStatusManifestacao();
             }
+			setaOrgaoDestino();
+			filtrarOrgaoDestino();
 
         } catch (Exception ex) {
             ex.printStackTrace();
