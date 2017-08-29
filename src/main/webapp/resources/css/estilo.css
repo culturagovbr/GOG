@@ -283,7 +283,7 @@ html,body {
 	height: 250px;
 	margin: 0 auto;
 	padding: 20px;
-	background: /*url("../img/black_pattern.gif");*/
+	background: url("../img/black_pattern.gif");
 }
 
 .geralRodape {

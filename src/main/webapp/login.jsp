@@ -103,7 +103,7 @@
 							</div>
 							<br />
 							<p>
-								À Ouvidoria compete receber, examinar e encaminhar as
+								À Ouvidoria compete receber, examinar e encaminhar as
 								reclamações, sugestões, elogios, denúncias e solicitação de
 								informações, especialmente aquelas que demandam maior urgência.
 							</p>
