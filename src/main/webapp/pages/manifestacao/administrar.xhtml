@@ -354,15 +354,15 @@
 								value="OutrosDados4"
 								rendered="#{mBManifestacao.showSecretData()}">
 
-								<p:column headerText="Tipo Pessoa" style="width: 150px">
+								<p:column headerText="Tipo Pessoa" style="width: 125px">
 									<h:outputText value="#{mBEnum.getTipoPessoaEnum(mBManifestacao.manifestacao.tipoPessoa).descricao}" />
 								</p:column>
 
-								<p:column style="width: 150px" headerText="CPF" rendered="#{mBManifestacao.manifestacao.tipoPessoa.equals('1')}">
+								<p:column style="width: 125px" headerText="CPF" rendered="#{mBManifestacao.manifestacao.tipoPessoa.equals('1')}">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrCpfCnpj}" />
 								</p:column>
 								
-								<p:column style="width: 150px" headerText="CNPJ" rendered="#{mBManifestacao.manifestacao.tipoPessoa.equals('2')}">
+								<p:column style="width: 125px" headerText="CNPJ" rendered="#{mBManifestacao.manifestacao.tipoPessoa.equals('2')}">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrCpfCnpj}" />
 								</p:column>
 
@@ -370,11 +370,11 @@
 									<h:outputText value="#{mBManifestacao.manifestacao.nrTelefone2}" />
 								</p:column>-->
 
-								<p:column headerText="Celular" style="width: 150px">
+								<p:column headerText="Celular" style="width: 125px">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrCelular}" />
 								</p:column>
 
-								<p:column headerText="Unidade destino escolhida pelo manifestante" style="width: 150px">
+								<p:column headerText="Unidade destino escolhida pelo manifestante" style="width: 225px">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrPronac}" />
 								</p:column>
 							</p:dataTable>
