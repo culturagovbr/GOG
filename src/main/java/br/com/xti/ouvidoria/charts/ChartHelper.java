@@ -227,7 +227,7 @@ public class ChartHelper {
 	
 	
 	static {
-		TEMPLATE_TOTAL_MENSAGENS_RECEBIDAS_INTERNA_VINCULADA = "{name: 'Unidades do MinC', data: [%s]}, {name: 'Unidades Vinculadas', data: [%s]}";
+		TEMPLATE_TOTAL_MENSAGENS_RECEBIDAS_INTERNA_VINCULADA = "{name: 'Unidades da Prefeitura', data: [%s]}, {name: 'Unidades Vinculadas', data: [%s]}";
 		TEMPLATE_DATA_CHART = "{name:'%s', y:%s, drilldown:{name: '%s'}},";
 		
 		{

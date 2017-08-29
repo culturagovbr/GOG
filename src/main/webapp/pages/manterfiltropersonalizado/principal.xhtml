@@ -137,7 +137,7 @@
                                 </p:calendar>
                             </p:column>
                         </p:row>
-                        <p:row>  
+                        <!--<p:row>  
                             <p:column><h:outputLabel value="Sexo:" /></p:column>  
                             <p:column colspan="3"> 
                                 <p:selectOneMenu value="#{mBFiltroPersonalizado.filtroPersonalizadoNovo.manSexo}">
@@ -145,8 +145,8 @@
                                     <f:selectItems value="#{mBEnum.sexoEnums}" var="sexo" itemLabel="#{sexo.descricao}" itemValue="#{sexo.id}" />
                                 </p:selectOneMenu>
                             </p:column>
-                        </p:row>
-                        <p:row>
+                        </p:row>-->
+                        <!--<p:row>
                             <p:column> <h:outputLabel value="Deseja Receber Resposta:"  /></p:column>  
                             <p:column colspan="3"> 
                                 <p:selectOneMenu value="#{mBFiltroPersonalizado.filtroPersonalizadoNovo.manResposta}">
@@ -155,8 +155,8 @@
                                     <f:selectItem itemLabel="Não" itemValue="0" />
                                 </p:selectOneMenu>
                             </p:column>
-                        </p:row>
-                        <p:row rendered="#{!(security.interlocutor || security.operador)}">
+                        </p:row>-->
+                        <!--<p:row rendered="#{!(security.interlocutor || security.operador)}">
                             <p:column><h:outputLabel value="Sigilo:" /></p:column>
                             <p:column colspan="3">
                                 <p:selectOneMenu value="#{mBFiltroPersonalizado.filtroPersonalizadoNovo.manSigilo}">
@@ -165,8 +165,8 @@
                                     <f:selectItem itemLabel="Não" itemValue="0" />
                                 </p:selectOneMenu>
                             </p:column>
-                        </p:row>
-                        <p:row>
+                        </p:row>-->
+                        <!--<p:row>
                             <p:column><h:outputLabel value="País:" /></p:column>
                             <p:column colspan="3">
                                 <p:selectOneMenu value="#{mBFiltroPersonalizado.filtroPersonalizadoNovo.manIdPais}">
@@ -175,8 +175,8 @@
                                     <p:ajax event="change" update="panelEstado" />
                                 </p:selectOneMenu>
                             </p:column>
-                        </p:row>
-                        <p:row>
+                        </p:row>-->
+                        <!--<p:row>
                             <p:column colspan="4">
                                 <p:outputPanel id="panelEstado">
 	                                <p:panelGrid style="width: 100%" rendered="#{mBFiltroPersonalizado.isBrasil(mBFiltroPersonalizado.filtroPersonalizadoNovo.manIdPais)}">
@@ -194,7 +194,7 @@
                                     </p:panelGrid>
                                 </p:outputPanel>
                             </p:column>
-                        </p:row>
+                        </p:row>-->
                         <p:row>
                             <p:column><h:outputLabel value="Cadastrada por:" /></p:column>
                             <p:column colspan="3" style="border: 0">
@@ -242,7 +242,7 @@
                                 </p:pickList>
                             </p:column>
                         </p:row>
-                        <p:row>
+                        <!--<p:row>
                             <p:column><h:outputLabel value="Faixa Etária:" /></p:column>
                             <p:column colspan="3">
                                 <p:pickList value="#{mBFiltroPersonalizado.listaFaixaEtariaNovo}" var="faixaetaria" itemLabel="#{faixaetaria.nmFaixaEtaria}" itemValue="#{faixaetaria}" converter="#{conversorFaixaEtaria}" showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains">
@@ -250,8 +250,8 @@
                                     <f:facet name="targetCaption">Selecionados</f:facet>
                                 </p:pickList>
                             </p:column>
-                        </p:row>
-                        <p:row>
+                        </p:row>-->
+                        <!--<p:row>
                             <p:column><h:outputLabel value="Grau Instrução:" /></p:column>
                             <p:column colspan="3">
                                 <p:pickList value="#{mBFiltroPersonalizado.listaGrauInstrucaoNovo}" var="grauinstrucao" itemLabel="#{grauinstrucao.nmGrauInstrucao}" itemValue="#{grauinstrucao}" converter="#{conversorGrauInstrucao}" showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains">
@@ -259,8 +259,8 @@
                                     <f:facet name="targetCaption">Selecionados</f:facet>
                                 </p:pickList>
                             </p:column>
-                        </p:row>
-                        <p:row>
+                        </p:row>-->
+                        <!--<p:row>
                             <p:column><h:outputLabel value="Raça:" /></p:column>
                             <p:column colspan="3">
                                 <p:pickList value="#{mBFiltroPersonalizado.listaRacaNovo}" var="raca" itemLabel="#{raca.descricao}" itemValue="#{raca}" converter="#{conversorRaca}" showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains">
@@ -268,7 +268,7 @@
                                     <f:facet name="targetCaption">Selecionados</f:facet>
                                 </p:pickList>
                             </p:column>
-                        </p:row>  
+                        </p:row>-->  
                         <p:row>  
                             <p:column> <h:outputLabel value="Meio de Entrada:"  /></p:column>  
                             <p:column colspan="3"> 

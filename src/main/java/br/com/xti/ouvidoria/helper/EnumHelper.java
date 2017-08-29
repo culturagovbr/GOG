@@ -35,7 +35,7 @@ public class EnumHelper {
     
     public static TipoManifestanteEnum getTipoManifestanteEnum(String id) {
     	switch (id) {
-	    	case "1": return TipoManifestanteEnum.SERVIDOR_MINC;
+	    	case "1": return TipoManifestanteEnum.SERVIDOR_PREFEITURA;
 	    	case "2": return TipoManifestanteEnum.SERVIDOR_UNIDADE_VINCULADA;
 	    	case "3": return TipoManifestanteEnum.CIDADAO;
 	    	default: return null;

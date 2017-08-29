@@ -1236,7 +1236,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
                     emailTextoHtml.append(PalavrasChavesHelper.converterPalavrasChaves(emailAutomatizado.getDsEmail(), manifestacao, dsMensagemAoManifestante, false));
                     emailTexto.append(PalavrasChavesHelper.converterPalavrasChaves(emailAutomatizado.getDsEmail(), manifestacao, dsMensagemAoManifestante, false));
 
-                    //emailManifestante.setAssunto("[MinC Ouvidoria] Encaminhamento de Manifestação para análise: " + manifestacao.getNrManifestacao());
+                    //emailManifestante.setAssunto("[Ouvidoria Prefeitura] Encaminhamento de Manifestação para análise: " + manifestacao.getNrManifestacao());
                     emailManifestante.setTextoHtml(emailTextoHtml.toString());
                     emailManifestante.setTextoSemFormatacao(emailTexto.toString());
                     
@@ -2418,7 +2418,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
 		.append("<p>Prezado (a) colaborador (a),</p>")
 		.append("<p>Verificamos que a presente mensagem permanece inconclusa.</p>")
 		.append("<p>Solicitamos que seja dada resposta, com brevidade, à mensagem em tela, tendo em vista que o prazo regimental de resposta a esta Ouvidoria já está expirado.</p>")
-		.append("<p>Reiteramos que enviem a resposta com a maior brevidade possível, visto que o prazo estabelecido pela Ouvidoria para atendimento ao interessado já se esgotou (vide art. 57, § 1º, I, II e III, da Portaria n. 40 - Regimento Interno do MinC)</p>") 
+		.append("<p>Reiteramos que enviem a resposta com a maior brevidade possível, visto que o prazo estabelecido pela Ouvidoria para atendimento ao interessado já se esgotou (vide art. 57, § 1º, I, II e III, da Portaria n. 40 - Regimento Interno da Prefeitura)</p>") 
 		.append("<p>Solicitamos que a resposta seja encaminhada à Ouvidoria, diretamente por meio deste sistema, para que possamos retransmiti-la ao interessado.</p>")
 		.append("<p>Em caso de dúvidas, a Ouvidoria está à disposição, pelos ramais 2498 ou 2439.</p>")
 		.append("<p>Atenciosamente,<br />") 

@@ -101,7 +101,7 @@ public class MBCharts implements Serializable {
 		ChartHelper.getTotalMensagensRecebidasInternaVinculada(itens, labels, dados);
 	}
 
-	public void getTotalMensagensEnviadasUnidadesMinc() {
+	public void getTotalMensagensEnviadasUnidadesPrefeitura() {
 		Collection<MensagemEnviadaUnidades> itens = service.getMensagensEnviadasUnidadesEntreDatas(dataDe, dataAte, ChartUnidadeEnum.UNIDADES_INTERNAS);
 		inicializar(itens);
 		ChartHelper.getTotalMensagensEnviadasUnidades(itens, dados);
@@ -113,7 +113,7 @@ public class MBCharts implements Serializable {
 		ChartHelper.getTotalMensagensEnviadasUnidades(itens, dados);
 	}
 	
-	public void getTipoMensagensRecebidasUnidadesMinc() {
+	public void getTipoMensagensRecebidasUnidadesPrefeitura() {
 		Collection<MensagemRecebidaTipo> itens = service.getTipoMensagensRecebidasEntreDatas(dataDe, dataAte, ChartUnidadeEnum.UNIDADES_INTERNAS);
 		inicializar(itens);
 		ChartHelper.getTotalMensagensRecebidasClassificacao(itens, dados);

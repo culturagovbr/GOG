@@ -28,7 +28,7 @@
 						plotShadow: false
 					},
 					title: {
-						text: 'Tipos das Mensagens Enviadas às Unidades do MinC - #{mBCharts.total}'
+						text: 'Tipos das Mensagens Enviadas às Unidades da Prefeitura - #{mBCharts.total}'
 					},
 					subtitle: {
 						text: #{mBCharts.subtitulo}
@@ -79,7 +79,7 @@
 					<h:outputLabel value=" à " />
 					<p:calendar value="#{mBCharts.dataAte}" pattern="dd/MM/yyyy" required="true" requiredMessage="Campo data é obrigatório" navigator="true" />
 					
-					<p:commandButton value="Consultar" action="#{mBCharts.getTipoMensagensRecebidasUnidadesMinc()}" ajax="false" />
+					<p:commandButton value="Consultar" action="#{mBCharts.getTipoMensagensRecebidasUnidadesPrefeitura()}" ajax="false" />
 				</h:panelGrid>
 			</div>
 		</h:form>

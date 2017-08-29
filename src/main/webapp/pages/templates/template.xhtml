@@ -228,7 +228,7 @@
 										ajax="false"
 										action="/pages/extracaodados/faixaEtaria-novas.xhtml?faces-redirect=true" />
 								</p:submenu>-->
-								<p:submenu label="Por Sexo"
+								<!--<p:submenu label="Por Sexo"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por Sexo"
@@ -236,7 +236,7 @@
 										action="/pages/extracaodados/sexo-encerradas.xhtml?faces-redirect=true" />
 									<p:menuitem value="• Manifestações não solucionadas por Sexo"
 										ajax="false" action="/pages/extracaodados/sexo-novas.xhtml?faces-redirect=true" />
-								</p:submenu>
+								</p:submenu>-->
 								<!--<p:submenu label="Por Raça"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
@@ -246,7 +246,7 @@
 									<p:menuitem value="• Manifestações não solucionadas por Raça"
 										ajax="false" action="/pages/extracaodados/raca-novas.xhtml?faces-redirect=true" />
 								</p:submenu>-->
-								<p:submenu label="Por UF"
+								<!--<p:submenu label="Por UF"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por UF"
@@ -260,7 +260,7 @@
 										value="• Manifestações com Encaminhamentos não retornados por UF"
 										ajax="false"
 										action="/pages/extracaodados/uf-encaminhadas.xhtml?faces-redirect=true" />
-								</p:submenu>
+								</p:submenu>-->
 								<p:submenu label="Atrasadas"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
@@ -280,18 +280,18 @@
 							<p:submenu label="Gráfico" rendered="#{security.enableChartMenu()}">
 								<p:menuitem value="Total de Mensagens Recebidas por Mês" ajax="false"
 									action="/pages/grafico/totalMensagensRecebidasGeral.xhtml?faces-redirect=true" />
-								<p:menuitem value="Total de Mensagens - Internas x Vinculadas" ajax="false"
-									action="/pages/grafico/totalMensagensRecebidasInternaVinculada.xhtml?faces-redirect=true" />
-								<p:menuitem value="Total de Mensagens Enviadas às Unidades do MinC" ajax="false"
-									action="/pages/grafico/totalMensagensEnviadasUnidadesMinc.xhtml?faces-redirect=true" />
+								<!--<p:menuitem value="Total de Mensagens - Internas x Vinculadas" ajax="false"
+									action="/pages/grafico/totalMensagensRecebidasInternaVinculada.xhtml?faces-redirect=true" />-->
+								<p:menuitem value="Total de Mensagens Enviadas às Unidades da Prefeitura" ajax="false"
+									action="/pages/grafico/totalMensagensEnviadasUnidadesPrefeitura.xhtml?faces-redirect=true" />
 								<p:menuitem value="Total de Mensagens Enviadas às Unidades Vinculadas" ajax="false"
 									action="/pages/grafico/totalMensagensEnviadasUnidadesVinculadas.xhtml?faces-redirect=true" />
-								<p:menuitem value="Tipos de Mensagens Recebidas - Unidades do MinC" ajax="false"
-									action="/pages/grafico/tiposMensagensRecebidasUnidadesMinc.xhtml?faces-redirect=true" />
+								<p:menuitem value="Tipos de Mensagens Recebidas - Unidades da Prefeitura" ajax="false"
+									action="/pages/grafico/tiposMensagensRecebidasUnidadesPrefeitura.xhtml?faces-redirect=true" />
 								<p:menuitem value="Tipos de Mensagens Recebidas - Unidades Vinculadas" ajax="false"
 									action="/pages/grafico/tiposMensagensRecebidasUnidadesVinculadas.xhtml?faces-redirect=true" />
-								<p:menuitem value="Total de Mensagens Recebidas por Região Econômica" ajax="false"
-									action="/pages/grafico/totalMensagensRecebidasRegiaoEconomica.xhtml?faces-redirect=true" />
+								<!--<p:menuitem value="Total de Mensagens Recebidas por Região Econômica" ajax="false"
+									action="/pages/grafico/totalMensagensRecebidasRegiaoEconomica.xhtml?faces-redirect=true" />-->
 								<p:menuitem value="Total de Mensagens Solucionadas por Mês" ajax="false"
 									action="/pages/grafico/totalMensagensSolucionadasGeral.xhtml?faces-redirect=true" />
 								<p:menuitem value="Questionários" ajax="false"
