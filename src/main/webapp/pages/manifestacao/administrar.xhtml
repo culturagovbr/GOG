@@ -198,7 +198,8 @@
 					var="manifestacao"
 					value="DadosManifestante"
 					rendered="#{mBManifestacao.showSecretData()}"
-					style="margin-bottom: 20px;">
+					style="margin-bottom: 0px;">
+
 					<f:facet name="header">  
                         Dados do Manifestante
                     </f:facet>
@@ -220,9 +221,44 @@
 							<p:ajax event="save" listener="#{mBManifestacao.salvarEmailManifestante}" />
 			            </p:inplace>
 					</p:column>
+
 				</p:dataTable>
+
+				<p:accordionPanel id="outrosDadosAc2" activeIndex="-1">
+					<p:tab title="Outros dados">
+
+						<p:dataTable id="dtbDadosManifestante"
+							var="manifestacao"
+							value="DadosManifestante"
+							rendered="#{mBManifestacao.showSecretData()}"
+							style="margin-bottom: 0px;">
+							
+							<p:column headerText="Tipo Pessoa" style="width: 125px">
+								<h:outputText value="#{mBEnum.getTipoPessoaEnum(mBManifestacao.manifestacao.tipoPessoa).descricao}" />
+							</p:column>
+		
+							<p:column style="width: 125px" headerText="CPF" rendered="#{mBManifestacao.manifestacao.tipoPessoa.equals('1')}">
+								<h:outputText value="#{mBManifestacao.manifestacao.nrCpfCnpj}" />
+							</p:column>
+							
+							<p:column style="width: 125px" headerText="CNPJ" rendered="#{mBManifestacao.manifestacao.tipoPessoa.equals('2')}">
+								<h:outputText value="#{mBManifestacao.manifestacao.nrCpfCnpj}" />
+							</p:column>
+		
+							<p:column headerText="Celular" style="width: 125px">
+								<h:outputText value="#{mBManifestacao.manifestacao.nrCelular}" />
+							</p:column>
+		
+							<p:column headerText="Unidade destino escolhida pelo manifestante" style="width: 225px">
+								<h:outputText value="#{mBManifestacao.manifestacao.nrPronac}" />
+							</p:column>
+						
+						</p:dataTable>
+
+					</p:tab>
+				</p:accordionPanel>
 				
-				<p:dataTable id="dtbTextoManifstacao" var="dtbTxtManifestacao" value="TextoManifestacao">
+				<p:dataTable id="dtbTextoManifstacao" var="dtbTxtManifestacao" value="TextoManifestacao" style="margin-top: 20px;">
 					<f:facet name="header">  
                         Texto da Manifestação  
                     </f:facet>
@@ -239,24 +275,24 @@
 				</p:dataTable>
 
 				<p:accordionPanel id="outrosDadosAc" activeIndex="-1">
-					<p:tab title="Outros Dados">
+					<p:tab title="Dados da ocorrência">
 						<h:panelGrid columns="1" cellpadding="10" style="max-width: 1180px; margin: 0 auto">
 							<p:dataTable id="dtbOutrosDados" style="width: 1100px"
 								var="outrosDados" value="OutrosDados"
 								rendered="#{mBManifestacao.showSecretData()}">
-								<f:facet name="header">  
-                                    Outros Dados
-                                </f:facet>
+								<!--<f:facet name="header">  
+                                    Dados da ocorrência
+                                </f:facet>-->
 
 								<p:column headerText="Endereço Completo"
 									style="min-width: 450px">
 									<h:outputText value="#{mBManifestacao.manifestacao.enderecoCompleto}" />
 								</p:column>
 
-								<p:column headerText="País" style="width: 150px">
+								<!--<p:column headerText="País" style="width: 150px">
 									<h:outputText
 										value="#{mBManifestacao.manifestacao.idPais.nmPais}" />
-								</p:column>
+								</p:column>-->
 
 								<!--<p:column headerText="Cidade - Estado" style="width: 250px">
 									<h:outputText
@@ -350,7 +386,7 @@
 
 							<!--</p:dataTable>-->
 
-							<p:dataTable id="dtbOutrosDados4" var="outrosDados4"
+							<!--<p:dataTable id="dtbOutrosDados4" var="outrosDados4"
 								value="OutrosDados4"
 								rendered="#{mBManifestacao.showSecretData()}">
 
@@ -366,9 +402,9 @@
 									<h:outputText value="#{mBManifestacao.manifestacao.nrCpfCnpj}" />
 								</p:column>
 
-								<!--<p:column headerText="Telefone Alternativo" style="width: 200px">
+								<p:column headerText="Telefone Alternativo" style="width: 200px">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrTelefone2}" />
-								</p:column>-->
+								</p:column>
 
 								<p:column headerText="Celular" style="width: 125px">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrCelular}" />
@@ -377,7 +413,7 @@
 								<p:column headerText="Unidade destino escolhida pelo manifestante" style="width: 225px">
 									<h:outputText value="#{mBManifestacao.manifestacao.nrPronac}" />
 								</p:column>
-							</p:dataTable>
+							</p:dataTable>-->
 							
 							<!--<p:dataTable id="dtbOutrosDadosInterlocutor1" var="outrosDadosInterlocutor1"
 								value="OutrosDadosInterlocutor1"
