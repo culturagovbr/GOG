@@ -278,7 +278,7 @@ html,body {
 
 .rodape {
 	color: white;
-	background-color: #005288;
+	background-color: #1366AF;
 	width: auto;
 	height: 250px;
 	margin: 0 auto;
@@ -416,7 +416,7 @@ html,body {
 }
 
 .endereco {
-	background-color: #005288;
+	background-color: #1366AF;
 	/*background: url("../img/black_pattern.gif");*/
 	font-family: 'Open Sans', serif;
 	font-size: 14px;
@@ -453,7 +453,7 @@ html,body {
 }
 
 .conteudoLogin {
-	background-color: #005288;
+	background-color: #1366AF;
 	height: 230px;
 	width: 380px;
 }
@@ -484,7 +484,7 @@ html,body {
 
 .conteudoLogin2 {
 	font-family: 'Open Sans', serif;
-	background-color: #006cb3;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 230px;
 	margin: 0 auto;
@@ -493,7 +493,7 @@ html,body {
 
 .conteudoLogin3 {
 	font-family: 'Open Sans', serif;
-	background-color: #006cb3;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 280px;
 	margin: 0 auto;
@@ -517,7 +517,7 @@ html,body {
 
 .conteudoLogin4 {
 	font-family: 'Open Sans', serif;
-	background-color: #006cb3;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 280px;
 	margin: 0 auto;
@@ -634,7 +634,7 @@ html,body {
 }
 
 .panelLogin {
-	background-color: #006cb3;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 176px;
 	margin: 0 auto;
@@ -824,7 +824,7 @@ html,body {
 .notch {
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	border-top: 10px solid #006cb3;
+	border-top: 10px solid #0277ce;
 	left: 20px;
 	margin-bottom: 10px;
 	margin-left: 20px;
@@ -875,7 +875,7 @@ html,body {
 }
 
 .topoLoginBox {
-	background-color: #005288;
+	background-color: #1366AF;
 	height: 10px;
 	position: absolute;
 	width: 380px;
@@ -918,7 +918,7 @@ ui-corner-all {
 }
 	
 .btnResponderQuestionario span {
-	background-color: #005288;
+	background-color: #1366AF;
 	color: #fff;
 	padding: 10px !important;
 }
@@ -944,7 +944,7 @@ ui-corner-all {
 }
 
 .links-anexo a {
-    color: #006cb3;
+    color: #0277ce;
     font-size: 14px;
     text-decoration: none;
 }

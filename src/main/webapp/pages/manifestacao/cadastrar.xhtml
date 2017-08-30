@@ -27,7 +27,7 @@
 			
 			.nota {
 				font-weight: bold;
-				color: #005288;
+				color: #1366AF;
 				background-color: wheat;
 				padding: 3px;
 				margin-top: 4px;
@@ -35,11 +35,11 @@
 			
 			.formTable {
 				border-collapse: collapse;
-				border: solid 2px #005288;
+				border: solid 2px #1366AF;
 			}
 			
 			.formTable > tbody > tr > td {
-				border: solid 2px #005288 !important;
+				border: solid 2px #1366AF !important;
 			}
     	</style>
     	
@@ -381,13 +381,13 @@
                     </p:row>-->
 
                     <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}" >
-                        <p:column style="font-weight: bold; color: white; background-color: #005288; text-align: center" colspan="2" >Informe os dados da Ocorrência</p:column>
+                        <p:column style="font-weight: bold; color: white; background-color: #1366AF; text-align: center" colspan="2" >Informe os dados da Ocorrência</p:column>
                     </p:row>
                     
                     <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Endereço: </p:column>  
                         <p:column style="font-weight: bold;">
-                            <p:inputText id="endereco" value="#{mBManifestacaoCadastrar.manifestacao.enEndereco}" style="width:250px;" title="Informe seu Endereço" />
+                            <p:inputText id="endereco" value="#{mBManifestacaoCadastrar.manifestacao.enEndereco}" style="width:250px;" title="Informe o endereço da ocorrência" />
                         </p:column>
                     </p:row>
                     
@@ -408,7 +408,14 @@
                     <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Bairro:</p:column>  
                         <p:column style="font-weight: bold;">
-                            <p:inputText id="bairro" value="#{mBManifestacaoCadastrar.manifestacao.dsBairro}" style="width:250px;" title="Informe o seu bairro" />
+                            <p:inputText id="bairro" value="#{mBManifestacaoCadastrar.manifestacao.dsBairro}" style="width:250px;" title="Informe o bairro da ocorrência" />
+                        </p:column>
+                    </p:row>
+
+                    <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
+                        <p:column style="font-weight: bold;">Cidade:</p:column>  
+                        <p:column style="font-weight: bold;">
+                            <p:inputText id="localidade" value="#{mBManifestacaoCadastrar.manifestacao.dsLocalidade}" style="width:250px;" title="Informe a cidade da ocorrência" />
                         </p:column>
                     </p:row>
                     
@@ -446,13 +453,6 @@
                             </p:selectOneMenu>
                         </p:column>
                     </p:row>-->
-
-                    <p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
-                            <p:column style="font-weight: bold;">Cidade:</p:column>  
-                            <p:column style="font-weight: bold;">
-                                <p:inputText id="localidade" value="#{mBManifestacaoCadastrar.manifestacao.dsLocalidade}" style="width:250px;" title="Informe a cidade da ocorrência" />
-                            </p:column>
-                        </p:row>
                     
                     <!--<p:row rendered="#{not mBManifestacaoCadastrar.anonimo}">
                         <p:column style="font-weight: bold;">Cidade: </p:column>  
