@@ -276,16 +276,16 @@
 
 				<p:accordionPanel id="outrosDadosAc" activeIndex="-1">
 					<p:tab title="Dados da ocorrência">
-						<h:panelGrid columns="1" cellpadding="10" style="max-width: 1180px; margin: 0 auto">
-							<p:dataTable id="dtbOutrosDados" style="width: 1100px"
+						<!--<h:panelGrid columns="1" cellpadding="10" style="max-width: 1180px; margin: 0 auto">-->
+							<p:dataTable id="dtbOutrosDados" style="margin-bottom: 0px"
 								var="outrosDados" value="OutrosDados"
 								rendered="#{mBManifestacao.showSecretData()}">
 								<!--<f:facet name="header">  
                                     Dados da ocorrência
-                                </f:facet>-->
+								</f:facet>-->
 
 								<p:column headerText="Endereço Completo"
-									style="min-width: 450px">
+									style="min-width: 500px">
 									<h:outputText value="#{mBManifestacao.manifestacao.enderecoCompleto}" />
 								</p:column>
 
@@ -299,7 +299,7 @@
 										value="#{mBManifestacao.manifestacao.dsLocalidade} - #{mBManifestacao.manifestacao.idUF.sgUF}" />
 								</p:column>-->
 
-								<p:column headerText="Cidade" style="width: 200px">
+								<p:column headerText="Cidade" style="width: 250px">
 									<h:outputText
 										value="#{mBManifestacao.manifestacao.dsLocalidade}" />
 								</p:column>
@@ -422,7 +422,7 @@
 									<h:outputText value="#{mBManifestacao.manifestacao.nrPronac}" />
 								</p:column>
 							</p:dataTable>-->
-						</h:panelGrid>
+						<!--</h:panelGrid>-->
 					</p:tab>
 				</p:accordionPanel>
 				
