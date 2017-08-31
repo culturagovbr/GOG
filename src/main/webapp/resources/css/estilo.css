@@ -48,7 +48,7 @@ html,body {
 .cabecalho {
 	height: 150px;
 	background: url("../resources/img/topoOuvidoriaInterno.png");
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-position: 190px;
 }
 
