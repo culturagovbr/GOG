@@ -48,7 +48,7 @@ html,body {
 .cabecalho {
 	height: 150px;
 	background: url("../resources/img/topoOuvidoriaInterno.png");
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-position: 190px;
 }
 
@@ -283,7 +283,7 @@ html,body {
 	height: 250px;
 	margin: 0 auto;
 	padding: 20px;
-	background: url("../img/black_pattern.gif");
+	background: url("../img/black_pattern.png");
 }
 
 .geralRodape {
@@ -417,7 +417,7 @@ html,body {
 
 .endereco {
 	background-color: #1366AF;
-	/*background: url("../img/black_pattern.gif");*/
+	/*background: url("../img/black_pattern.png");*/
 	font-family: 'Open Sans', serif;
 	font-size: 14px;
 	color: white;

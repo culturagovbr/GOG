@@ -1402,7 +1402,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
 	                //----- enviando e-mail ao MANIFESTANTE ---------//
 	                if (qtdEncaminhamento == 1) {
 	                    EmailService.Email emailManifestante = emailService.newEmail();
-	                    if ((manifestacao.getEeEmailUsuario() != null || manifestacao.getEeEmailSecundario() != null) && "1".equals(manifestacao.getStResposta())) {
+	                    if ((manifestacao.getEeEmailUsuario() != null) && "1".equals(manifestacao.getStResposta())) {
 	
 	                        String nomeManifestante = (manifestacao.getNmPessoa() != null) ? manifestacao.getNmPessoa() : "Manifestante";
 	                        emailManifestante.addDestinatario(nomeManifestante, manifestacao.getEeEmailUsuario());
