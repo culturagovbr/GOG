@@ -138,7 +138,7 @@ public class EmailService {
         for (String emailRemetente : ManifestacaoUtils.converterEmListaDeEmails(manifestacao, true)) {
         	Email email = new Email();
         	email.addDestinatario(nomeRemetente, emailRemetente);
-        	email.setAssunto("[MinC Ouvidoria] Nova mensagem na Manifestação: " + numeroManifestacao);
+        	email.setAssunto("[Ouvidoria Videira] Nova mensagem na Manifestação: " + numeroManifestacao);
         	email.setTextoHtml(String.format(emailTextoHtml.toString(), nomeRemetente, numeroManifestacao));
         	email.setTextoSemFormatacao(String.format(emailTexto.toString(), nomeRemetente, numeroManifestacao));
         	envia(email);

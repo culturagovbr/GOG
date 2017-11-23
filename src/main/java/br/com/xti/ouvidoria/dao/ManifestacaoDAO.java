@@ -234,9 +234,9 @@ public class ManifestacaoDAO extends AbstractDAO<TbManifestacao> {
             restricoesLista.add(joinUF.get(TbUF_.idUF).in(filtro.getManIdEstado()));
         }
 
-        if (ValidacaoHelper.isNotEmpty(filtro.getManLocalidade())) {
+        /*if (ValidacaoHelper.isNotEmpty(filtro.getManLocalidade())) {
             restricoesLista.add(m.get(TbManifestacao_.dsLocalidade).in(filtro.getManLocalidade()));
-        }
+        }*/
 
         // Faixa Etária
         if (ValidacaoHelper.isNotEmpty(filtro.getManIdFaixaEtaria())) {

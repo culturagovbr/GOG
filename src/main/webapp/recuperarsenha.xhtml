@@ -1,169 +1,190 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
-
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"  
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:head>
-    	<h:outputStylesheet name="estilo.css" library="css" />
-		<h:outputStylesheet name="estiloGoogle.css" library="css" />
-		
-		<style type="text/css">
-			.conteudo {
-				width: 100%;
-				height: 420px;
-				margin: 0 auto;
-			}
-			
-			.wrapper {
-				margin: 0 auto;
-				width: 800px;
-			}
-			
-			.box {
-				font-family: 'Open Sans', serif;
-				text-align: center;
-				color: #FFFFFF;
-				height: 300px;
-				width: 390px;
-				background-color: #02712B;
-				margin: 35px 5px 0px 5px;
-				float: left;
-			}
-			
-			.box h4 {
-				padding: 15px;
-			}
-			
-			.message {
-				font-size: 12px;
-				text-decoration: none;
-				margin-top: 10px;
-				color: #FFFF00;
-			}
-			
-			.message ul {
-				list-style-type: none;
-			}
-		</style>
-    </h:head>
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
-    <h:body>
-		<div class="global">
-			<!-- BARRA DO GOVERNO -->
-			<div id="barra-brasil"></div>
+<h:head>
+	<title>Sistema de Ouvidoria</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet name="default.css" library="css" />
+	<h:outputStylesheet name="cssLayout.css" library="css" />
+	<h:outputStylesheet name="estilo.css" library="css" />
+	<h:outputStylesheet name="estiloGoogle.css" library="css" />
+	<h:outputScript name="locale-primefaces.js" library="js" />
+
+	<style type="text/css">
+		.wrapper {
+			margin: 0 auto;
+			width: 800px;
+		}
+		
+		.box {
+			font-family: 'Open Sans', serif;
+			text-align: center;
+			color: #FFFFFF;
+			height: 250px;
+			width: 390px;
+			background-color: #1366AF;
+			margin: 35px 5px 0px 5px;
+			float: left;
+		}
+		
+		.box h4 {
+			padding: 15px;
+		}
+		
+		.message {
+			font-size: 12px;
+			text-decoration: none;
+			margin-top: 10px;
+			color: #FFFF00;
+		}
+		
+		.message ul {
+			list-style-type: none;
+		}
+
+		@media screen and (min-height: 770px) {
+			.footer {
+				display: block;
+				color: white;
+				background-color: #1366AF;
+				height: 250px;
+				margin: 0 auto;
+				background: url("./img/black_pattern.gif");
+				position: absolute;
+				bottom:0;
+				width:100%;
+			}
+		}
+	</style>
+</h:head>
+
+<h:body>
+	<h:form id="formInfo">
+		<p:growl id="growl" />
+	</h:form>
+
+	<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" />
 	
-			<div class="bgCabecalho">
-				<div class="cabecalho">
-					<div class="logo">
-				    	<h:form>
+	<p:dialog modal="true" widgetVar="statusDialog" header="Carregando" draggable="false" closable="false">
+		<p:graphicImage value="/img/carregando.gif" />
+	</p:dialog>
+
+	<div id="top">
+		<ui:insert name="top">
+			<h:form>
+				<div id="barraGoverno"></div>
+				
+				<div class="bgCabecalho">
+					<div class="cabecalho">
+						<div class="logo">
 							<a href="#{request.contextPath}">
 								<h:graphicImage value="/img/logo-ouvidoria-interna.png" />
 							</a>
-						</h:form>
+						</div>
 					</div>
 				</div>
-			</div>
+			</h:form>
 			
-			<div class="conteudo" style="background-color: white">
-				<div class="wrapper">
-					<div class="box box-email">
-						<h:form id="frmSenhaConta" prependId="false">
-							<h3>Sua Conta</h3>
-							<h4>Para receber uma nova senha favor digitar o e-mail da sua conta no campo abaixo.</h4>
-							
-							<h:outputLabel for="email" value="E-mail: " style="font-family: sans-serif; font-size: 12px;" />
-							<p:inputText id="email"
-									required="true"
-									requiredMessage="Digite seu e-mail"
-									style="font-family: sans-serif; font-size: 12px" size="50"
-									value="#{mBNovaSenha.email}">
-									<f:validator binding="#{emailValidator}" />
-							</p:inputText>
-							<p:focus for="email" />
-							
-							<p:commandButton value="Solicitar Nova Senha"
-									actionListener="#{mBNovaSenha.sendNewAccountPassword()}"
-									style="margin-top: 10px;"
-									update="frmSenhaConta"
-									ajax="false" />
-									
-							<div class="message">
-								<h:message id="msgEmail" for="email" />
-							</div>
-						</h:form>
-					</div>
-					
-					<div class="box box-manifestacao">
-						<h:form prependId="false">
-							<h3>Sua Manifestação</h3>
-							<h4>Para receber uma nova senha favor digitar o número da manifestação no campo abaixo.</h4>
-							
-							<h:outputLabel for="numManifestacao" value="Nº Manifestação: " style="font-family: sans-serif; font-size: 12px;" />
-							<p:inputText id="numManifestacao"
-									required="true"
-									requiredMessage="Digite o número da manifestação"
-									converterMessage="O número da manifestação deve possuir 10 dígitos numéricos"
-									style="font-family: sans-serif; font-size: 12px" size="45"
-									value="#{mBNovaSenha.numManifestacao}">
-							</p:inputText>
-							
-							<p:commandButton value="Solicitar Nova Senha"
-									actionListener="#{mBNovaSenha.sendNewManifestationPassword()}"
-									style="margin-top: 10px;"
-									update="frmSenha"
-									ajax="false" />
-							
-							<div class="message">
-								<h:message id="msgManifestacao" for="numManifestacao" />
-							</div>
+			<!-- Menu primefaces -->
+			<div class="menu">
+				<div class="menuBar">
+					<div class="menuBar">
+						<h:form id="menubarForm">
+							<p:menubar>
+								<p:submenu label="Manifestação">
+									<p:menuitem value="Cadastrar Manifestação" ajax="false"
+										action="/pages/manifestacao/cadastrar.xhtml" />
+								</p:submenu>
+								<p:menuitem style="margin-left: 30px" value="Cadastrar-se"
+									ajax="false" action="cadastrarManifestante.xhtml"
+									rendered="#{!security.loggedIn()}" />
+								<p:submenu style="float: right; margin-right: 130px"
+									icon="ui-icon-gear">
+									<p:menuitem value="Sair" ajax="false"
+										action="#{security.logout()}" />
+								</p:submenu>
+							</p:menubar>
 						</h:form>
 					</div>
 				</div>
 			</div>
-			
-			<div class="rodape">
-				<div class="geralRodape">
-					<div class="box1">
-						<h3>Sobre a Ouvidoria</h3>
-						<p>A Ouvidoria do Ministério da Cultura é uma unidade
-							diretamente ligada ao Gabinete do dirigente máximo da instituição.</p>
-		
-						<p>Além de ser um canal de comunicação com o cidadão e
-							instrumento de participação e exercício de cidadania, a Ouvidoria é
-							uma modalidade de controle social, de defesa de direitos e também
-							uma importante ferramenta qualificadora da gestão pública.</p>
-		
-						<p>Participe! Estamos aqui para atendê-lo.</p>
-					</div>
-					<div class="box2">
-						<h3>Links Importantes</h3>
-						<ul>
-							<li><h:graphicImage library="img" name="setaHome.png" /> <a
-								href="http://www.cultura.gov.br/perguntas-frequentes">Perguntas
-									Frequentes</a></li>
-							<br />
-							<li><h:graphicImage library="img" name="setaHome.png" /> <a
-								href="http://pnc.culturadigital.br/">Plano Nacional de Cultura</a></li>
-							<br />
-							<li><h:graphicImage library="img" name="setaHome.png" /> <a
-								href="http://www.cultura.gov.br/snc">Sistema Nacional de
-									Cultura</a></li>
-							<br />
-							<li><h:graphicImage library="img" name="setaHome.png" /> <a
-								href="http://novosalic.cultura.gov.br/">Salic WEB</a></li>
-							<br />
-							<li><h:graphicImage library="img" name="setaHome.png" /> <a
-								href="http://vale.cultura.gov.br">Vale Cultura</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+		</ui:insert>
+	</div>
+	<div>
+		<div id="content" class="left_content">
+			<ui:insert name="content">
 
-		<script src="http://barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+					<div class="wrapper">
+						<div class="box box-email">
+							<h:form id="frmSenhaConta" prependId="false">
+								<h3>Sua Conta</h3>
+								<h4>Para receber uma nova senha favor digitar o e-mail da sua conta no campo abaixo.</h4>
+								
+								<h:outputLabel for="email" value="E-mail: " style="font-family: sans-serif; font-size: 12px;" />
+								<p:inputText id="email"
+										required="true"
+										requiredMessage="Digite seu e-mail"
+										style="font-family: sans-serif; font-size: 12px" size="50"
+										value="#{mBNovaSenha.email}">
+										<f:validator binding="#{emailValidator}" />
+								</p:inputText>
+								<p:focus for="email" />
+								
+								<p:commandButton value="Solicitar Nova Senha"
+										actionListener="#{mBNovaSenha.sendNewAccountPassword()}"
+										style="margin-top: 10px;"
+										update="frmSenhaConta"
+										ajax="false" />
+										
+								<div class="message">
+									<h:message id="msgEmail" for="email" />
+								</div>
+							</h:form>
+						</div>
+						
+						<div class="box box-manifestacao">
+							<h:form prependId="false">
+								<h3>Sua Manifestação</h3>
+								<h4>Para receber uma nova senha favor digitar o número da manifestação no campo abaixo.</h4>
+								
+								<h:outputLabel for="numManifestacao" value="Nº Manifestação: " style="font-family: sans-serif; font-size: 12px;" />
+								<p:inputText id="numManifestacao"
+										required="true"
+										requiredMessage="Digite o número da manifestação"
+										converterMessage="O número da manifestação deve possuir 10 dígitos numéricos"
+										style="font-family: sans-serif; font-size: 12px" size="45"
+										value="#{mBNovaSenha.numManifestacao}">
+								</p:inputText>
+								
+								<p:commandButton value="Solicitar Nova Senha"
+										actionListener="#{mBNovaSenha.sendNewManifestationPassword()}"
+										style="margin-top: 10px;"
+										update="frmSenha"
+										ajax="false" />
+								
+								<div class="message">
+									<h:message id="msgManifestacao" for="numManifestacao" />
+								</div>
+							</h:form>
+						</div>
+					</div>
+
+            </ui:insert>
 		</div>
-	</h:body>
+	</div>
+
+	<div id="bottom">
+		<ui:insert name="bottom">
+			<div class="footer">
+				<div class="geralRodape">
+				</div>
+			</div>
+		</ui:insert>
+	</div>
+</h:body>
 </html>

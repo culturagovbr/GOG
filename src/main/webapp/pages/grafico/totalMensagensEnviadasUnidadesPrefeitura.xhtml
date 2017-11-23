@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="../templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="bread">
+		<h:form>
+			<p:breadCrumb>
+				<p:menuitem value="Home" />
+				<p:menuitem value="Gráficos" />
+			</p:breadCrumb>
+		</h:form>
+	</ui:define>
+	
+	<ui:define name="content">
+		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="http://code.highcharts.com/modules/exporting.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('#container').highcharts({
+					chart: {
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false
+					},
+					title: {
+						text: 'Total de Mensagens Enviadas às Unidades da Prefeitura - #{mBCharts.total}'
+					},
+					subtitle: {
+						text: #{mBCharts.subtitulo}
+					},
+					credits: {
+						enabled: false
+					},
+					tooltip: {
+						enabled: false
+					},
+					plotOptions: {
+						pie: {
+							dataLabels: {
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+							},
+							showInLegend: true
+						},
+						series: {
+							cursor: 'pointer',
+							point: {
+								events: {
+									click: function() {
+										var drilldown = this.drilldown;
+										if(drilldown) {
+											carregarManifestacoes([{name:'idManifestacoes', value:drilldown.name}]);
+										}
+									}
+								}
+							}
+						}
+					},
+					series: [{
+						type: 'pie',
+						name: 'Porcentagem de mensagens',
+						data: [#{mBCharts.dados}]
+					}]
+				});
+			});
+		</script>
+		
+        <h:form style="max-width: 1190px; margin: 0 auto">
+        	<div class="TituloGrafico" style="padding-bottom: 10px">Informe uma data para gerar o gráfico</div>
+        	<div class="pesquisaGrafico" style="background: #1366AF; width: 1216px; margin-left:-10px; height: 50px; line-height: 40px; color: white">
+			<h:panelGrid border="0" columns="10" style="margin: 0 auto; max-width: 1190px">
+				<h:outputLabel value="De " />
+				<p:calendar value="#{mBCharts.dataDe}" pattern="dd/MM/yyyy" required="true" requiredMessage="Campo data é obrigatório" navigator="true" />
+				
+				<h:outputLabel value=" à " />
+				<p:calendar value="#{mBCharts.dataAte}" pattern="dd/MM/yyyy" required="true" requiredMessage="Campo data é obrigatório" navigator="true" />
+				
+				<p:commandButton value="Consultar" action="#{mBCharts.getTotalMensagensEnviadasUnidadesPrefeitura()}" ajax="false" />
+			</h:panelGrid>
+			</div>
+		</h:form>
+		
+        <div id="container" style="margin:0 auto!important; width: 1216px!important;"/>
+        
+        <ui:include src="/pages/templates/listaManifestacaoGraficos.xhtml" />
+	</ui:define>
+</ui:composition>

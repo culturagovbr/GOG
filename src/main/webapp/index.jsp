@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Ouvidoria do MinC</title>
+		<title>Ouvidoria da Prefeitura</title>
 	</head>
 <body>
 	<jsp:forward page="/login" />

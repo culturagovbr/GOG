@@ -66,15 +66,15 @@
 									rendered="#{security.hasRole('MANTER_FILTROS_PERSONALIZADOS')}" />
 							</p:submenu>
 							<p:submenu label="Administração" rendered="#{security.enableAdministrationMenu()}">
-								<p:menuitem value="Área Entrada" ajax="false"
+								<!--<p:menuitem value="Área Entrada" ajax="false"
 									action="/pages/manterareaentrada/principal.xhtml?faces-redirect=true"
-									rendered="#{security.hasRole('MANTER_AREA_DE_ENTRADA')}" />
+									rendered="#{security.hasRole('MANTER_AREA_DE_ENTRADA')}" />-->
 								<p:menuitem value="Meio Entrada" ajax="false"
 									action="/pages/mantermeioentrada/principal.xhtml?faces-redirect=true"
 									rendered="#{security.hasRole('MANTER_MEIO_DE_ENTRADA')}" />
-								<p:menuitem value="Meio Resposta" ajax="false"
+								<!--<p:menuitem value="Meio Resposta" ajax="false"
 									action="/pages/mantermeioresposta/principal.xhtml?faces-redirect=true"
-									rendered="#{security.hasRole('MANTER_MEIO_DE_RESPOSTA')}" />
+									rendered="#{security.hasRole('MANTER_MEIO_DE_RESPOSTA')}" />-->
 								<p:menuitem value="Prioridade" ajax="false"
 									action="/pages/manterprioridade/principal.xhtml?faces-redirect=true"
 									rendered="#{security.hasRole('MANTER_PRIORIDADE')}" />
@@ -87,15 +87,15 @@
 								<p:menuitem value="Tipo de Manifestação" ajax="false"
 									action="/pages/mantertipomanifestacao/principal.xhtml?faces-redirect=true"
 									rendered="#{security.hasRole('MANTER_TIPO_MANIFESTACAO')}" />
-								<p:menuitem value="Faixa Etária" ajax="false"
+								<!--<p:menuitem value="Faixa Etária" ajax="false"
 									action="/pages/manterfaixaetaria/principal.xhtml?faces-redirect=true"
-									rendered="#{security.hasRole('MANTER_FAIXA_ETARIA')}" />
+									rendered="#{security.hasRole('MANTER_FAIXA_ETARIA')}" />-->
 								<p:menuitem value="Unidade" ajax="false"
 									action="/pages/manterunidades/principal.xhtml?faces-redirect=true"
 									rendered="#{security.hasRole('MANTER_UNIDADE')}" />
-								<p:menuitem value="Grau de Instrução" ajax="false"
+								<!--<p:menuitem value="Grau de Instrução" ajax="false"
 									action="/pages/mantergrauinstrucao/principal.xhtml?faces-redirect=true"
-									rendered="#{security.hasRole('MANTER_GRAU_INSTRUCAO')}" />
+									rendered="#{security.hasRole('MANTER_GRAU_INSTRUCAO')}" />-->
 								<p:menuitem value="Questionário" ajax="false"
 									action="/pages/manterquestionario/principal.xhtml?faces-redirect=true"
 									rendered="#{security.hasRole('MANTER_QUESTIONARIO')}" />
@@ -206,7 +206,7 @@
 										ajax="false"
 										action="/pages/extracaodados/prioridade-encaminhadas.xhtml?faces-redirect=true" />
 								</p:submenu>
-								<p:submenu label="Por Grau Instrução"
+								<!--<p:submenu label="Por Grau Instrução"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por Grau de Instrução"
@@ -216,8 +216,8 @@
 										value="• Manifestações não solucionadas por Grau de Instrução"
 										ajax="false"
 										action="/pages/extracaodados/grauInstrucao-novas.xhtml?faces-redirect=true" />
-								</p:submenu>
-								<p:submenu label="Por Faixa Etária"
+								</p:submenu>-->
+								<!--<p:submenu label="Por Faixa Etária"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por Faixa Etária"
@@ -227,8 +227,8 @@
 										value="• Manifestações não solucionadas por Faixa Etária"
 										ajax="false"
 										action="/pages/extracaodados/faixaEtaria-novas.xhtml?faces-redirect=true" />
-								</p:submenu>
-								<p:submenu label="Por Sexo"
+								</p:submenu>-->
+								<!--<p:submenu label="Por Sexo"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por Sexo"
@@ -236,8 +236,8 @@
 										action="/pages/extracaodados/sexo-encerradas.xhtml?faces-redirect=true" />
 									<p:menuitem value="• Manifestações não solucionadas por Sexo"
 										ajax="false" action="/pages/extracaodados/sexo-novas.xhtml?faces-redirect=true" />
-								</p:submenu>
-								<p:submenu label="Por Raça"
+								</p:submenu>-->
+								<!--<p:submenu label="Por Raça"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por Raça"
@@ -245,8 +245,8 @@
 										action="/pages/extracaodados/raca-encerradas.xhtml?faces-redirect=true" />
 									<p:menuitem value="• Manifestações não solucionadas por Raça"
 										ajax="false" action="/pages/extracaodados/raca-novas.xhtml?faces-redirect=true" />
-								</p:submenu>
-								<p:submenu label="Por UF"
+								</p:submenu>-->
+								<!--<p:submenu label="Por UF"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
 										value="• Manifestações Solucionadas/Encerradas por UF"
@@ -260,7 +260,7 @@
 										value="• Manifestações com Encaminhamentos não retornados por UF"
 										ajax="false"
 										action="/pages/extracaodados/uf-encaminhadas.xhtml?faces-redirect=true" />
-								</p:submenu>
+								</p:submenu>-->
 								<p:submenu label="Atrasadas"
 									rendered="#{security.hasRole('REALIZAR_EXTRACAO_DE_DADOS')}">
 									<p:menuitem
@@ -280,18 +280,18 @@
 							<p:submenu label="Gráfico" rendered="#{security.enableChartMenu()}">
 								<p:menuitem value="Total de Mensagens Recebidas por Mês" ajax="false"
 									action="/pages/grafico/totalMensagensRecebidasGeral.xhtml?faces-redirect=true" />
-								<p:menuitem value="Total de Mensagens - Internas x Vinculadas" ajax="false"
-									action="/pages/grafico/totalMensagensRecebidasInternaVinculada.xhtml?faces-redirect=true" />
-								<p:menuitem value="Total de Mensagens Enviadas às Unidades do MinC" ajax="false"
-									action="/pages/grafico/totalMensagensEnviadasUnidadesMinc.xhtml?faces-redirect=true" />
+								<!--<p:menuitem value="Total de Mensagens - Internas x Vinculadas" ajax="false"
+									action="/pages/grafico/totalMensagensRecebidasInternaVinculada.xhtml?faces-redirect=true" />-->
+								<p:menuitem value="Total de Mensagens Enviadas às Unidades da Prefeitura" ajax="false"
+									action="/pages/grafico/totalMensagensEnviadasUnidadesPrefeitura.xhtml?faces-redirect=true" />
 								<p:menuitem value="Total de Mensagens Enviadas às Unidades Vinculadas" ajax="false"
 									action="/pages/grafico/totalMensagensEnviadasUnidadesVinculadas.xhtml?faces-redirect=true" />
-								<p:menuitem value="Tipos de Mensagens Recebidas - Unidades do MinC" ajax="false"
-									action="/pages/grafico/tiposMensagensRecebidasUnidadesMinc.xhtml?faces-redirect=true" />
+								<p:menuitem value="Tipos de Mensagens Recebidas - Unidades da Prefeitura" ajax="false"
+									action="/pages/grafico/tiposMensagensRecebidasUnidadesPrefeitura.xhtml?faces-redirect=true" />
 								<p:menuitem value="Tipos de Mensagens Recebidas - Unidades Vinculadas" ajax="false"
 									action="/pages/grafico/tiposMensagensRecebidasUnidadesVinculadas.xhtml?faces-redirect=true" />
-								<p:menuitem value="Total de Mensagens Recebidas por Região Econômica" ajax="false"
-									action="/pages/grafico/totalMensagensRecebidasRegiaoEconomica.xhtml?faces-redirect=true" />
+								<!--<p:menuitem value="Total de Mensagens Recebidas por Região Econômica" ajax="false"
+									action="/pages/grafico/totalMensagensRecebidasRegiaoEconomica.xhtml?faces-redirect=true" />-->
 								<p:menuitem value="Total de Mensagens Solucionadas por Mês" ajax="false"
 									action="/pages/grafico/totalMensagensSolucionadasGeral.xhtml?faces-redirect=true" />
 								<p:menuitem value="Questionários" ajax="false"
@@ -323,9 +323,9 @@
 								<p:menuitem value="Minhas Informações" ajax="false"
 									action="/pages/manterusuarios/minhasInformacoes.xhtml?faces-redirect=true" />
 							</p:submenu>
-							<p:menuitem value="Salic" ajax="false" target="blank"
+							<!--<p:menuitem value="Salic" ajax="false" target="blank"
 								url="http://novosalic.cultura.gov.br/index/" 
-								rendered="#{not security.manifestante}" />
+								rendered="#{not security.manifestante}" />-->
 							<p:submenu style="float: right; margin-right: 130px" icon="ui-icon-gear">
 								<p:menuitem value="Usuário" ajax="false"
 									action="/pages/manterusuarios/principal.xhtml?faces-redirect=true"

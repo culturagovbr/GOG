@@ -29,7 +29,87 @@ html,body {
 }
 
 .global {
+	/***FUNDO TELA DE LOGIN***/
 	background: url("../img/blue_pattern.gif");
+	background-color: #CACACA;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+/* min-width  */
+@media screen and (min-width: 980px) {
+	.conteudo {
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		align-self: center;
+		height: 458px;
+		width: 980px;
+	}
+
+	.combo-login {
+		position: absolute;
+		top: 50%;
+		left: 80%;
+		transform: translate(-50%, -50%);
+		float: right;
+	}
+
+	.logo-externa {
+		height: 142px;
+		margin: 0 auto;
+		width: 980px;
+	}
+	
+	.logo-externa > img {
+		position: absolute;
+		top: 50%;
+		left: 20%;
+		transform: translate(-50%, -50%);
+		float: left;
+	}
+}
+
+/* max-width  */
+@media screen and (max-width: 980px) {
+	.conteudo {
+		position: absolute;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		align-self: center;
+		height: 100%;
+		width: 380px;
+	}
+
+	.combo-login {
+		position: absolute;
+		top: 350px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		float: right;
+		padding-top: 40%;
+	}
+
+	.logo-externa {
+		height: 142px;
+		margin: 0 auto;
+		width: 100%;
+	}
+	
+	.logo-externa > img {
+		position: absolute;
+		height: 169px;
+		width: 250px;
+		top: 100px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		float: left;
+	}
 }
 
 .global2 {
@@ -40,7 +120,7 @@ html,body {
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
 	height: auto;
-	height: 570px;
+	height: 100vh;
 	width: 100%;
 }
 
@@ -75,6 +155,7 @@ html,body {
 }
 
 .bgCabecalho {
+	/***FUNDO CINZA CABEÇALHO INTERNO***/
 	background: url("../resources/img/blue_pattern.gif");
 }
 
@@ -83,16 +164,6 @@ html,body {
     height: 142px;
     margin: 0 auto;
     width: 1200px;
-}
-
-.logo-externa {
-    height: 142px;
-    margin: 0 auto;
-    width: 980px;
-}
-
-.logo-externa > img {
-    margin-top: 30px;
 }
 
 .logo img {
@@ -113,13 +184,6 @@ html,body {
 	margin: 0 5px 0 0;
 	padding: 0;
 	width: 20px;
-}
-
-.conteudo {
-	height: 458px;
-	margin: -50px auto;
-	top: 75px;
-	width: 980px;
 }
 
 .perguntas-frequentes {
@@ -198,10 +262,6 @@ html,body {
 	display: inline-block;
 }
 
-.combo-login {
-	float: right;
-}
-
 .conteudo2 {
 	width: 980px;
 	height: 420px;
@@ -276,7 +336,7 @@ html,body {
 
 .rodape {
 	color: white;
-	background-color: #00401B;
+	background-color: #1366AF;
 	width: auto;
 	height: 250px;
 	margin: 0 auto;
@@ -414,8 +474,8 @@ html,body {
 }
 
 .endereco {
-	background-color: #00401B;
-	background: url("../img/black_pattern.gif");
+	background-color: #1366AF;
+	/*background: url("../img/black_pattern.gif");*/
 	font-family: 'Open Sans', serif;
 	font-size: 14px;
 	color: white;
@@ -451,7 +511,7 @@ html,body {
 }
 
 .conteudoLogin {
-	background-color: #00401B;
+	background-color: #1366AF;
 	height: 230px;
 	width: 380px;
 }
@@ -482,7 +542,7 @@ html,body {
 
 .conteudoLogin2 {
 	font-family: 'Open Sans', serif;
-	background-color: #02712B;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 230px;
 	margin: 0 auto;
@@ -491,7 +551,7 @@ html,body {
 
 .conteudoLogin3 {
 	font-family: 'Open Sans', serif;
-	background-color: #02712B;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 280px;
 	margin: 0 auto;
@@ -515,7 +575,7 @@ html,body {
 
 .conteudoLogin4 {
 	font-family: 'Open Sans', serif;
-	background-color: #02712B;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 280px;
 	margin: 0 auto;
@@ -632,7 +692,7 @@ html,body {
 }
 
 .panelLogin {
-	background-color: #02712B;
+	background-color: #0277ce;
 	color: #FFFFFF;
 	height: 176px;
 	margin: 0 auto;
@@ -822,7 +882,7 @@ html,body {
 .notch {
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
-	border-top: 10px solid #02712B;
+	border-top: 10px solid #0277ce;
 	left: 20px;
 	margin-bottom: 10px;
 	margin-left: 20px;
@@ -873,7 +933,7 @@ html,body {
 }
 
 .topoLoginBox {
-	background-color: #00401B;
+	background-color: #1366AF;
 	height: 10px;
 	position: absolute;
 	width: 380px;
@@ -916,7 +976,7 @@ ui-corner-all {
 }
 	
 .btnResponderQuestionario span {
-	background-color: #00500f;
+	background-color: #1366AF;
 	color: #fff;
 	padding: 10px !important;
 }
@@ -942,7 +1002,7 @@ ui-corner-all {
 }
 
 .links-anexo a {
-    color: #02712B;
+    color: #0277ce;
     font-size: 14px;
     text-decoration: none;
 }

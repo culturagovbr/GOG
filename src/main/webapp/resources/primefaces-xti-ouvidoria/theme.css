@@ -807,7 +807,8 @@ body .ui-tooltip {
 }
 .ui-widget-header {
     border: 1px solid #f0f0f0;
-    background: #00500f url("#{resource['primefaces-xti-ouvidoria:images/ui-bg_flat_75_00500f_40x100.png']}") 50% 50% repeat-x;
+    /***VERDE INTERNO***/
+    background: #1366AF url("#{resource['primefaces-xti-ouvidoria:images/ui-bg_flat_75_00500f_40x100.png']}") 50% 50% repeat-x;
     color: #ffffff;
     font-weight: bold;
 }
@@ -1603,5 +1604,5 @@ ui-paginator-page ui-state-default ui-state-active ui-corner-all
 panelButton {
     
     text-align: center;
-    background-color: green;
+    background-color: blue;
 }

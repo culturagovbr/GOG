@@ -958,13 +958,16 @@ public class MBManifestacao extends AbstractManifestationController implements S
         }
     }
 
+	public void setaOrgaoDestino(){
+		this.txtFiltroOrgaoDestino = manifestacao.getNrPronac();
+	}
+
     public void gravaStatusManifestacao() {
         try {
-            //STATUS EM ANALISE
-            if (StatusManifestacaoEnum.EM_ANALISE.getId().equals(manifestacao.getStStatusManifestacao())) {
+			//STATUS EM ANALISE
+			if (StatusManifestacaoEnum.EM_ANALISE.getId().equals(manifestacao.getStStatusManifestacao())) {
                 manifestacao.setIdUsuarioAnalisador(securityService.getUser());
             }
-
             //STATUS SOLUCIONADA
             if (StatusManifestacaoEnum.SOLUCIONADA.getId().equals(manifestacao.getStStatusManifestacao())) {
                 //recupera status anterior da manifestacao
@@ -988,6 +991,8 @@ public class MBManifestacao extends AbstractManifestationController implements S
                 dao.edit(manifestacao);
                 ajustaListaStatusManifestacao();
             }
+			setaOrgaoDestino();
+			filtrarOrgaoDestino();
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -1231,7 +1236,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
                     emailTextoHtml.append(PalavrasChavesHelper.converterPalavrasChaves(emailAutomatizado.getDsEmail(), manifestacao, dsMensagemAoManifestante, false));
                     emailTexto.append(PalavrasChavesHelper.converterPalavrasChaves(emailAutomatizado.getDsEmail(), manifestacao, dsMensagemAoManifestante, false));
 
-                    //emailManifestante.setAssunto("[MinC Ouvidoria] Encaminhamento de Manifestação para análise: " + manifestacao.getNrManifestacao());
+                    //emailManifestante.setAssunto("[Ouvidoria Prefeitura] Encaminhamento de Manifestação para análise: " + manifestacao.getNrManifestacao());
                     emailManifestante.setTextoHtml(emailTextoHtml.toString());
                     emailManifestante.setTextoSemFormatacao(emailTexto.toString());
                     
@@ -1366,7 +1371,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
 	            tramite.setDsDescricao(dsEncaminhamento);
 	            tramite.setDtTramite(new Date());
 	            tramite.setIdEncaminhamento(encaminhamento);
-	            tramite.setIdUnidadeEnvio(unidade);
+				tramite.setIdUnidadeEnvio(unidade);
 	            tramite.setIdUsuarioEmissor(usuario);
 	            tramite.setStRetornada(BooleanEnum.NAO.getId());
 	            tramite.setStNotificacao(BooleanEnum.NAO.getId());
@@ -1377,7 +1382,17 @@ public class MBManifestacao extends AbstractManifestationController implements S
 	                usuarioReceptor = usuarioDAO.find(idUsuarioEncaminhamento);
 	                tramite.setIdUsuarioReceptor(usuarioReceptor);
 	            }
-	            tramiteDAO.create(tramite);
+				
+	            /*-----------------------------------------------------*/
+	            /*------------------- ALTERAÇÕES ----------------------*/
+	            /*-----------------------------------------------------*/
+
+				if (ValidacaoHelper.isEmpty(usuarioReceptor) && ValidacaoHelper.isNotOne(unidade)){					
+					if(ValidacaoHelper.isEquals(idUnidade,3043)){
+						usuarioReceptor = usuarioDAO.find(5);
+					}
+					tramite.setIdUsuarioReceptor(usuarioReceptor);
+				}
 	            
 	            //----- gravando anexos ---------//
 				ArrayList<TbTramitexAnexo> anexosTramite = new ArrayList<>();
@@ -1397,7 +1412,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
 	                //----- enviando e-mail ao MANIFESTANTE ---------//
 	                if (qtdEncaminhamento == 1) {
 	                    EmailService.Email emailManifestante = emailService.newEmail();
-	                    if ((manifestacao.getEeEmailUsuario() != null || manifestacao.getEeEmailSecundario() != null) && "1".equals(manifestacao.getStResposta())) {
+	                    if ((manifestacao.getEeEmailUsuario() != null) && "1".equals(manifestacao.getStResposta())) {
 	
 	                        String nomeManifestante = (manifestacao.getNmPessoa() != null) ? manifestacao.getNmPessoa() : "Manifestante";
 	                        emailManifestante.addDestinatario(nomeManifestante, manifestacao.getEeEmailUsuario());
@@ -2413,12 +2428,12 @@ public class MBManifestacao extends AbstractManifestationController implements S
 		.append("<p>Prezado (a) colaborador (a),</p>")
 		.append("<p>Verificamos que a presente mensagem permanece inconclusa.</p>")
 		.append("<p>Solicitamos que seja dada resposta, com brevidade, à mensagem em tela, tendo em vista que o prazo regimental de resposta a esta Ouvidoria já está expirado.</p>")
-		.append("<p>Reiteramos que enviem a resposta com a maior brevidade possível, visto que o prazo estabelecido pela Ouvidoria para atendimento ao interessado já se esgotou (vide art. 57, § 1º, I, II e III, da Portaria n. 40 - Regimento Interno do MinC)</p>") 
+		.append("<p>Reiteramos que enviem a resposta com a maior brevidade possível, visto que o prazo estabelecido pela Ouvidoria para atendimento ao interessado já se esgotou (vide art. 57, § 1º, I, II e III, da Portaria n. 40 - Regimento Interno da Prefeitura)</p>") 
 		.append("<p>Solicitamos que a resposta seja encaminhada à Ouvidoria, diretamente por meio deste sistema, para que possamos retransmiti-la ao interessado.</p>")
-		.append("<p>Em caso de dúvidas, a Ouvidoria está à disposição, pelos ramais 2498 ou 2439.</p>")
+		.append("<p>Em caso de dúvidas, a Ouvidoria está à disposição.</p>")
 		.append("<p>Atenciosamente,<br />") 
 		.append("Ouvidoria<br />")
-		.append("Ministério da Cultura</p>").toString();
+		.append("Prefeitura de Videira</p>").toString();
 	}
 	
 	@Override

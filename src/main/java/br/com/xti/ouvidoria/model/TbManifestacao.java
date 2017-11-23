@@ -54,6 +54,7 @@ import br.com.xti.ouvidoria.model.enums.BooleanEnum;
     @NamedQuery(name = "TbManifestacao.findByDtCadastro", query = "SELECT t FROM TbManifestacao t WHERE t.dtCadastro = :dtCadastro"),
     @NamedQuery(name = "TbManifestacao.findByDtUltimaAtualizacao", query = "SELECT t FROM TbManifestacao t WHERE t.dtUltimaAtualizacao = :dtUltimaAtualizacao"),
     @NamedQuery(name = "TbManifestacao.findByTpRaca", query = "SELECT t FROM TbManifestacao t WHERE t.tpRaca = :tpRaca"),
+    @NamedQuery(name = "TbManifestacao.findByNrPronac", query = "SELECT t FROM TbManifestacao t WHERE t.nrPronac = :nrPronac"),
     @NamedQuery(name = "TbManifestacao.findByNrTelefone", query = "SELECT t FROM TbManifestacao t WHERE t.nrTelefone = :nrTelefone"),
     @NamedQuery(name = "TbManifestacao.findByNrCEP", query = "SELECT t FROM TbManifestacao t WHERE t.nrCEP = :nrCEP"),
     @NamedQuery(name = "TbManifestacao.findByNrFAX", query = "SELECT t FROM TbManifestacao t WHERE t.nrFAX = :nrFAX"),
@@ -165,7 +166,7 @@ public class TbManifestacao implements Serializable {
     @Size(max = 20)
     @Column(name = "nrCpfCnpj")
     private String nrCpfCnpj;
-    @Size(max = 20)
+    @Size(max = 200)
     @Column(name = "nrPronac")
     private String nrPronac;
     @Size(max = 20)
@@ -263,7 +264,7 @@ public class TbManifestacao implements Serializable {
         this.idManifestacao = idManifestacao;
     }
 
-    public TbManifestacao(Integer idManifestacao, int nrManifestacao, String dsSenha, String tpSexo, String stResposta, String dsTextoManifestacao, String stStatusManifestacao, Date dtCadastro, Date dtUltimaAtualizacao, String tpRaca, String eeEmailUsuario) {
+    public TbManifestacao(Integer idManifestacao, int nrManifestacao, String dsSenha, String tpSexo, String stResposta, String dsTextoManifestacao, String stStatusManifestacao, Date dtCadastro, Date dtUltimaAtualizacao, String tpRaca, String nrPronac, String eeEmailUsuario) {
         this.idManifestacao = idManifestacao;
         this.nrManifestacao = nrManifestacao;
         this.dsSenha = dsSenha;
@@ -274,6 +275,7 @@ public class TbManifestacao implements Serializable {
         this.dtCadastro = dtCadastro;
         this.dtUltimaAtualizacao = dtUltimaAtualizacao;
         this.tpRaca = tpRaca;
+        this.nrPronac = nrPronac;
         this.eeEmailUsuario = eeEmailUsuario;
     }
 
