@@ -31,6 +31,85 @@ html,body {
 .global {
 	/***FUNDO TELA DE LOGIN***/
 	background: url("../img/blue_pattern.gif");
+	background-color: #CACACA;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+/* min-width  */
+@media screen and (min-width: 980px) {
+	.conteudo {
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		align-self: center;
+		height: 458px;
+		width: 980px;
+	}
+
+	.combo-login {
+		position: absolute;
+		top: 50%;
+		left: 80%;
+		transform: translate(-50%, -50%);
+		float: right;
+	}
+
+	.logo-externa {
+		height: 142px;
+		margin: 0 auto;
+		width: 980px;
+	}
+	
+	.logo-externa > img {
+		position: absolute;
+		top: 50%;
+		left: 20%;
+		transform: translate(-50%, -50%);
+		float: left;
+	}
+}
+
+/* max-width  */
+@media screen and (max-width: 980px) {
+	.conteudo {
+		position: absolute;
+		display: inline-block;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		align-self: center;
+		height: 100%;
+		width: 380px;
+	}
+
+	.combo-login {
+		position: absolute;
+		top: 350px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		float: right;
+		padding-top: 40%;
+	}
+
+	.logo-externa {
+		height: 142px;
+		margin: 0 auto;
+		width: 100%;
+	}
+	
+	.logo-externa > img {
+		position: absolute;
+		height: 169px;
+		width: 250px;
+		top: 100px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		float: left;
+	}
 }
 
 .global2 {
@@ -41,7 +120,7 @@ html,body {
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
 	height: auto;
-	height: 570px;
+	height: 100vh;
 	width: 100%;
 }
 
@@ -87,16 +166,6 @@ html,body {
     width: 1200px;
 }
 
-.logo-externa {
-    height: 142px;
-    margin: 0 auto;
-    width: 980px;
-}
-
-.logo-externa > img {
-    margin-top: 30px;
-}
-
 .logo img {
 	margin-top: 18px;
 }
@@ -115,13 +184,6 @@ html,body {
 	margin: 0 5px 0 0;
 	padding: 0;
 	width: 20px;
-}
-
-.conteudo {
-	height: 458px;
-	margin: -50px auto;
-	top: 75px;
-	width: 980px;
 }
 
 .perguntas-frequentes {
@@ -198,10 +260,6 @@ html,body {
 	height: 48px;
 	padding: 0 5px 0 10px;
 	display: inline-block;
-}
-
-.combo-login {
-	float: right;
 }
 
 .conteudo2 {

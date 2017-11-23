@@ -1119,7 +1119,7 @@
 									id="slcUnidadeTramite" required="true"
 									requiredMessage="Informe a unidade de envio da mensagem"
 									disabled="#{mBManifestacao.desabilitaUnidadeTramite()}">
-									<f:selectItem itemLabel="- Selecione -" itemValue="" />
+									<!-- <f:selectItem itemLabel="- Selecione -" itemValue="" /> -->
 									<f:selectItems value="#{mBManifestacao.listaUnidadesTramite}"
 										var="item" itemLabel="#{item.sgUnidade} - #{item.nmUnidade}"
 										itemValue="#{item.idUnidade}" />
@@ -1135,7 +1135,7 @@
 									required="#{security.interlocutor}"
 									requiredMessage="Informe o operador"
 									disabled="#{mBManifestacao.desabilitaUsuarioTramite()}">
-									<f:selectItem itemLabel="- Selecione -" itemValue="" />
+									<!-- <f:selectItem itemLabel="- Selecione -" itemValue="" /> -->
 									<f:selectItems value="#{mBManifestacao.usuarios}" var="item"
 										itemLabel="#{item.nmUsuario}" itemValue="#{item.idUsuario}" />
 										

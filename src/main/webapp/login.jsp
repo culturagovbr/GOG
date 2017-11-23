@@ -31,19 +31,14 @@
 </head>
 
 <body>
-	<div class="global">
-		<!-- BARRA DO GOVERNO -->
-		<div id="barra-brasil"></div>
-		
+	<div class="global">	
 		<div class="bgSistemaOuvidoria">
-			<div class="cabecalho2">
-				<div class="logo-externa">
-					<img src="${context}/img/logo-ouvidoria.png" />
-				</div>
-			</div>
 			<!-- conteúdo Login -->
 			<form method="post" action="${context}/login">
 				<div class="conteudo">
+                    <div class="logo-externa">
+                        <img src="${context}/img/logo-ouvidoria.png" />
+                    </div>
 					<div class="combo-login">
 						<div class="topoLoginBox"></div>
 						<div class="conteudoLogin">
@@ -108,80 +103,10 @@
 								informações, especialmente aquelas que demandam maior urgência.
 							</p>
 						</div>
-						<div class="socials-rede">
-							<a href="https://www.facebook.com/MinisterioDaCultura" target="blank"><span class="icon-facebook"></span></a>
-							<a href="https://twitter.com/culturagovbr" target="blank"><span class="icon-twitter"></span></a>
-							<a href="https://www.youtube.com/ministeriodacultura/" target="blank"><span class="icon-youtube"></span></a>
-							<a href="http://www.flickr.com/photos/ministeriodacultura" target="blank"><span class="icon-flickr"></span></a>
-						</div>
-					</div>
-					<div class="perguntas-frequentes">
-						<span class="question"></span>
-						<a href="http://www.cultura.gov.br/perguntas-frequentes" target="_blank">Perguntas frequentes</a>
 					</div>
 				</div>
 			</form>
 		</div>
-		<div class="rodape">
-			<div class="geralRodape">
-				<div class="box1">
-					<h3>Sobre a Ouvidoria</h3>
-					<p>
-						A Ouvidoria do Ministério da Cultura é uma unidade
-						diretamente ligada ao Gabinete do dirigente máximo da instituição.
-					</p>
-
-					<p>
-						Além de ser um canal de comunicação com o cidadão e
-						instrumento de participação e exercício de cidadania, a Ouvidoria
-						é uma modalidade de controle social, de defesa de direitos e
-						também uma importante ferramenta qualificadora da gestão pública.
-					</p>
-
-					<p>Participe! A qualidade de nossos serviços depende de sua participação.</p>
-				</div>
-				<div class="box2">
-					<h3>Links Importantes</h3>
-					<ul>
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="http://www.cgu.gov.br/assuntos/ouvidoria">Ouvidoria Geral da União (OGU)</a>
-						</li>
-						<br />
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="http://pnc.culturadigital.br/">Plano Nacional de Cultura</a>
-						</li>
-						<br />
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="http://www.cultura.gov.br/snc">Sistema Nacional de Cultura</a>
-						</li>
-						<br />
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="http://novosalic.cultura.gov.br/">Salic WEB</a>
-						</li>
-						<br />
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="http://www.cultura.gov.br/valecultura">Vale Cultura</a>
-						</li>
-						<br />
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="${context}/pages/externo/listarAnexos.xhtml">Relatórios da Ouvidoria</a>
-						</li>
-						<br />
-						<li>
-							<img src="${context}/resources/img/setaHome.png" />
-							<a href="${context}/resources/Manual-do-Ouvidor-Minc-FINAL-2017.pdf">Manual do Usuário</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div id="footer-brasil"><div id="wrapper-footer-brasil"><a href="http://www.acessoainformacao.gov.br/"><span class="logo-acesso-footer"></span></a><a href="http://www.brasil.gov.br/"><span class="logo-brasil-footer"></span></a></div></div>
 	</div>
 	
 	<div class="modal" id="avisoModal">
@@ -197,6 +122,5 @@
 		</div>
 	</div>
 	
-	<script src="http://barra.brasil.gov.br/barra.js" type="text/javascript"></script>
 </body>
 </html>

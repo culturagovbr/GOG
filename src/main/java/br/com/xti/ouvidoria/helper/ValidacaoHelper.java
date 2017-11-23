@@ -64,4 +64,45 @@ public class ValidacaoHelper {
 		return !isEmpty(obj);
 	}
 
+	/**
+	 * @param obj
+	 *            objeto a ser validado
+	 * @return TRUE se o objeto passado por parâmetro for diferente de 1
+	 */
+	public static boolean isNotOne(Object obj) {
+		boolean dif = false;
+
+		if(obj != 1) {
+			dif = true;
+		}
+
+		return dif;
+	}
+
+	public static boolean isDiferent(Object obj, Object obj2) {
+		boolean dif = true;
+
+		if (obj.equals(obj2)) {
+			dif = false;
+		} 
+		return dif;
+	}
+
+	public static boolean isEquals(Object obj, Object obj2) {
+		boolean dif = false;
+
+		if (obj.equals(obj2)) {
+			dif = true;
+		} 
+		return dif;
+	}
+
+	public static Integer acertoUsuarioReceptor(Object obj) {
+		int id = 0;
+		if (obj.equals("Unidade de Teste")) {
+			id = 4;
+		} 
+		return id;
+	}
+
 }

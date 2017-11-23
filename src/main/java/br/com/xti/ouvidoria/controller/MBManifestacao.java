@@ -1371,7 +1371,7 @@ public class MBManifestacao extends AbstractManifestationController implements S
 	            tramite.setDsDescricao(dsEncaminhamento);
 	            tramite.setDtTramite(new Date());
 	            tramite.setIdEncaminhamento(encaminhamento);
-	            tramite.setIdUnidadeEnvio(unidade);
+				tramite.setIdUnidadeEnvio(unidade);
 	            tramite.setIdUsuarioEmissor(usuario);
 	            tramite.setStRetornada(BooleanEnum.NAO.getId());
 	            tramite.setStNotificacao(BooleanEnum.NAO.getId());
@@ -1382,7 +1382,17 @@ public class MBManifestacao extends AbstractManifestationController implements S
 	                usuarioReceptor = usuarioDAO.find(idUsuarioEncaminhamento);
 	                tramite.setIdUsuarioReceptor(usuarioReceptor);
 	            }
-	            tramiteDAO.create(tramite);
+				
+	            /*-----------------------------------------------------*/
+	            /*------------------- ALTERAÇÕES ----------------------*/
+	            /*-----------------------------------------------------*/
+
+				if (ValidacaoHelper.isEmpty(usuarioReceptor) && ValidacaoHelper.isNotOne(unidade)){					
+					if(ValidacaoHelper.isEquals(idUnidade,3043)){
+						usuarioReceptor = usuarioDAO.find(5);
+					}
+					tramite.setIdUsuarioReceptor(usuarioReceptor);
+				}
 	            
 	            //----- gravando anexos ---------//
 				ArrayList<TbTramitexAnexo> anexosTramite = new ArrayList<>();
@@ -2420,10 +2430,10 @@ public class MBManifestacao extends AbstractManifestationController implements S
 		.append("<p>Solicitamos que seja dada resposta, com brevidade, à mensagem em tela, tendo em vista que o prazo regimental de resposta a esta Ouvidoria já está expirado.</p>")
 		.append("<p>Reiteramos que enviem a resposta com a maior brevidade possível, visto que o prazo estabelecido pela Ouvidoria para atendimento ao interessado já se esgotou (vide art. 57, § 1º, I, II e III, da Portaria n. 40 - Regimento Interno da Prefeitura)</p>") 
 		.append("<p>Solicitamos que a resposta seja encaminhada à Ouvidoria, diretamente por meio deste sistema, para que possamos retransmiti-la ao interessado.</p>")
-		.append("<p>Em caso de dúvidas, a Ouvidoria está à disposição, pelos ramais 2498 ou 2439.</p>")
+		.append("<p>Em caso de dúvidas, a Ouvidoria está à disposição.</p>")
 		.append("<p>Atenciosamente,<br />") 
 		.append("Ouvidoria<br />")
-		.append("Ministério da Cultura</p>").toString();
+		.append("Prefeitura de Videira</p>").toString();
 	}
 	
 	@Override
